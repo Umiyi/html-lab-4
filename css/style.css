@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+/* GRID LAYOUT */
+.planner {
+  display: grid;
+  grid-template-columns: 260px repeat(3, 1fr);
+  grid-template-rows: auto repeat(3, 1fr);
+  gap: 12px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* HEADER */
+.header {
+  grid-column: 1 / -1;
+  border: 2px solid #ccc;
+  padding: 16px;
+  background: #fff;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 10px;
+  font-size: 32px;
+}
+
+.meta {
+  display: flex;
+  gap: 20px;
+}
+
+.meta input {
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+}
+
+/* SIDEBAR */
+.sidebar {
+  grid-row: 2 / -1;
+  border: 2px solid #ccc;
+  background: #fff;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.sidebar label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.sidebar input[type="text"] {
+  flex: 1;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+}
+
+/* DAYS */
+.day {
+  border: 2px solid #ccc;
+  background: #fff;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.day h2 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.day textarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* RESPONSIVE (без повної адаптивки) */
+@media (max-width: 1100px) {
+  .planner {
+    grid-template-columns: 220px repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .planner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .sidebar {
+    grid-row: auto;
+  }
+}
